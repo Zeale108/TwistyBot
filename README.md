@@ -28,9 +28,9 @@ module.exports.help = {
 module.exports.params = {
 	// The minimum allowed number of command parameters
 	min: 0,
-    // The maximum allowed number of command parameters
+	// The maximum allowed number of command parameters
 	max: 0,
-    // If the wrong number of parameters are given, this message is sent back in response.
+	// If the wrong number of parameters are given, this message is sent back in response.
 	help: 'Usage: !hw'
 };
 
@@ -39,7 +39,7 @@ module.exports.permissions = [
 ];
 
 module.exports.command = async function(message, params) {
-    // Send this text back to the user
+	// Send this text back to the user
 	return 'Hello world!';
 };
 ```
@@ -76,7 +76,7 @@ Here we only have one rule. If the author of the message is NOT 2884707459720806
 ```
 [
 	{ not_channel: ['275684827062206465', '281925269919367168'], block: true },
-    { user: '*' }
+	{ user: '*' }
 ]
 ```
 It is possible to pass an array of ids to be matched by a rule. The first rule blocks if the message is from any channel except the two listed in the array. The second rule demonstrates the special string '\*'. If '\*' is passed in place of an id, it matches every id. This permission set allows any user in the two channels listed and blocks all others.
@@ -85,7 +85,7 @@ It is possible to pass an array of ids to be matched by a rule. The first rule b
 ```
 [
 	{ channel_type: [ 'dm', 'group' ], block: true }
-    { channel_type: 'text' }
+	{ channel_type: 'text' }
 ]
 ```
 The three types of channels are 'dm' (private message channels), 'group' (group private message channels) and 'text' (guild text channels). This permission set blocks messages in private channels, but allows messages from guild channels.
@@ -94,7 +94,7 @@ The three types of channels are 'dm' (private message channels), 'group' (group 
 ```
 [
 	{ guild: '232274245848137728', role: '278959310481129473' },
-    { guild: '232274245848137728', user: ['228019028755611648', '288470745972080640'] }
+	{ guild: '232274245848137728', user: ['228019028755611648', '288470745972080640'] }
 ]
 ```
 Rules can filter on combinations of user, channel, guild, and roles. The first rule of this set allows users with role 278959310481129473 in guild 232274245848137728. The second rule allows two specific users in the same guild. Any other users will be blocked by default for not matching any previous rules.
@@ -103,15 +103,15 @@ Rules can filter on combinations of user, channel, guild, and roles. The first r
 There is a set of permissions defined in config.js which is evaluated before any command permissions. It is a good idea to add a rule there allowing the bot owner to run any command ie:
 ```
 	global_permissions: [
-    	{ user: '<YOUR ID HERE>' }
-    ]
+		{ user: '<YOUR ID HERE>' }
+	]
 ```
 Global permissions are useful to block commands being used in or out of specific channels or guilds:
 ```
 	global_permissions: [
-    	{ not_guild: '<MY FAVORITE GUILD ID>', block: true },
-    	{ user: '<YOUR ID HERE>' }
-    ]
+		{ not_guild: '<MY FAVORITE GUILD ID>', block: true },
+		{ user: '<YOUR ID HERE>' }
+	]
 ```
 
 ## Files and Folders Overview
@@ -145,55 +145,55 @@ This is a personal project with one developer, and I get lazy sometimes. As such
 global
 	.server_directory // Path of project root
 	.custom_require(path) // require() relative to custom_modules
-    .root_require(path) // require() relative to project root
+	.root_require(path) // require() relative to project root
 	.apis
-    	.CrystalMathLabs
-        	.get_clan_list()
-            .update_player(player_name)
-            .player_last_change(player_name)
-            .time_to_max(player_name)
-        .RSBuddy
-        	.get_item_proper_name(name)
-            .get_item_id(name)
-            .get_item_summary(name)
-            .get_similar_items(name)
-            .get_item_history(id, start, interval)
-            .get_item_details(name)
-        .RuneScape
-        	.lookup_player(username)
-            .combat_level(stats)
-            .forum_profile(username)
-            .calculate_time(xp, target_xp)
-            .max_ehp
+		.CrystalMathLabs
+			.get_clan_list()
+			.update_player(player_name)
+			.player_last_change(player_name)
+			.time_to_max(player_name)
+		.RSBuddy
+			.get_item_proper_name(name)
+			.get_item_id(name)
+			.get_item_summary(name)
+			.get_similar_items(name)
+			.get_item_history(id, start, interval)
+			.get_item_details(name)
+		.RuneScape
+			.lookup_player(username)
+			.combat_level(stats)
+			.forum_profile(username)
+			.calculate_time(xp, target_xp)
+			.max_ehp
 	.util
-    	.approximate_time(t1, t2) // time between dates as string eg "3 weeks, 2 days"
-        .convert_time(seconds)
-        .format_number(value, num_decimals)
-        .fuzzy_match(needle, haystack, weights)
-        .printf(string, ...values)
-        .queue_request(site, options)
-        .request(url_or_options)
-        .sleep(ms) // promise resolves after ms milliseconds
-        .table
+		.approximate_time(t1, t2) // time between dates as string eg "3 weeks, 2 days"
+		.convert_time(seconds)
+		.format_number(value, num_decimals)
+		.fuzzy_match(needle, haystack, weights)
+		.printf(string, ...values)
+		.queue_request(site, options)
+		.request(url_or_options)
+		.sleep(ms) // promise resolves after ms milliseconds
+		.table
 	.config
-    	.get(key)
-    .Discord
-    	.bot // discord.js client object
-        .italics(text) // apply discord italics markdown to text
-        .bold(text)
-        .bold_italics(text)
-        .strikeout(text)
-        .underline(text)
-        .underline_italics(text)
-        .underline_bold(text)
-        .underline_bold_italics(text)
-        .code_block(text)
-        .inline_code(text)
-        .link(link) // A link that doesnt create an embed
-        .masked_link(text, link) // Create a 'spoofy' link (RichEmbed only)        
-        .get_text_channel(channel_name)
-        .get_dm_channel(recipient)
-        .get_user(recipient)
+		.get(key)
+	.Discord
+		.bot // discord.js client object
+		.italics(text) // apply discord italics markdown to text
+		.bold(text)
+		.bold_italics(text)
+		.strikeout(text)
+		.underline(text)
+		.underline_italics(text)
+		.underline_bold(text)
+		.underline_bold_italics(text)
+		.code_block(text)
+		.inline_code(text)
+		.link(link) // A link that doesnt create an embed
+		.masked_link(text, link) // Create a 'spoofy' link (RichEmbed only)        
+		.get_text_channel(channel_name)
+		.get_dm_channel(recipient)
+		.get_user(recipient)
 ```
 
 ## Making GET Requests
@@ -201,8 +201,8 @@ If your bot needs to make GET requests, you can use `util.queue_request(site, op
 ```
 var res = await util.queue_request('mysite.com', {
 	success_delay: 2000,
-    failure_delay: 5000,
-    max_attempts: 10
+	failure_delay: 5000,
+	max_attempts: 10
 });
 res.statusCode => http status code
 res.body => http body
@@ -211,7 +211,7 @@ With this, a GET request will be made to mysite.com. If successful, the response
 ```
 var res = await util.queue_request('mysite.com', {
 	priority: 10,
-    codes: [200, 404]
+	codes: [200, 404]
 });
 ```
 queue_request can also prioritize requests. The default priority is 0. Higher values give higher priority and whenever a new request can start, queue_request always chooses first by highest priority, then by longest wait time if the priorities are equal. Priority is useful if you want to implement some background requests while still having requests made by a user command happen as soon as possible.
