@@ -97,21 +97,21 @@ Discord.bot.on('message', function(message) {
 		console.warn(err.stack);
 		message.channel.sendMessage(Discord.code_block('An error occurred while running the command:\n' + err.message));
 
+		/* Uncomment this and change the channel name to have the bot log errors to Discord!
 		Discord.bot.get_text_channel('Twisty-Test.logs').sendMessage(Discord.code_block(
 			'Channel: ' + message.channel.get_name()
 		 	+ '\nAuthor:  ' + message.author.username + '#' + message.author.discriminator
 		 	+ '\nMessage: ' + message.cleanContent
 			+ '\n' + err.stack));
+		*/
 	})
 	.then( () => message.channel.stopTyping() );
 });
 
-// Log unhandled promises
+// Log unhandled promise stack (for whatever reason it only logs the message by default)
 process.on('unhandledRejection', function(err) {
 	console.error('Promise Rejected!!!');
 	console.warn(err.stack);
-
-	Discord.bot.get_text_channel('Twisty-Test.logs').sendMessage(Discord.code_block('Unhandled promise!\n' + err.stack));
 	//throw err;
 });
 

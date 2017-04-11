@@ -10,8 +10,6 @@ global.config = Object.assign(
 	root_require('config/config.js')
 );
 
-global.database = custom_require('dbpool');
-
 // Load utilities
 global.util = custom_require('util');
 global.apis = custom_require('apis');

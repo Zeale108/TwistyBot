@@ -5,7 +5,7 @@ module.exports.help = {
 };
 module.exports.params = {
 	min: 0,
-	max: 1,
+	max: 0,
 	// Reminder: there are no parameters so help text can't be shown
 	help: `Usage: !sandwich`
 };
