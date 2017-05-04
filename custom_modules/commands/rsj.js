@@ -31,7 +31,7 @@ module.exports.command = async function(message, params) {
 	var post_types = ['publish'];
 	if (message.check_permissions([
 			{ channel: ['266095695860203520', '230201497302859776'] }, // RS JUSTICE.name-checks, RS JUSTICE.private
-			{ guild: '232274245848137728' }, // Twisty-Test
+			// { guild: '232274245848137728' }, // Twisty-Test
 			{ user: ['217934790886686730', '189803024611278849'] }, // Zeal, Twisty Fork
 		]))
 	{
@@ -102,8 +102,8 @@ function get_embed(details, message)
 	if (details.custom.victim)
 		case_details += '• Victims - ' + details.custom.victim.join(',') + '\n';
 	case_details += '• Status - ' + (details.status == 'publish' ? 'public' : details.status) + '\n';
-	if (message.guild && message.guild.id == '232274245848137728')
-		case_details += '• ID - ' + details.id + '\n';
+	// if (message.guild && message.guild.id == '232274245848137728')
+	// 	case_details += '• ID - ' + details.id + '\n';
 
 	case_details += '\n\n' + details.url;
 
@@ -116,8 +116,8 @@ function get_embed(details, message)
 function send_response_to_zeal(response, message, params)
 {
 	var sender = '[' + message.channel.get_name() + '] ' + message.author.username + ': !rsj ' + params.join(',') + '\n';
-	// var Zeal_dm = Discord.bot.get_text_channel('RS JUSTICE.global-usage');
-	var Zeal_dm = Discord.bot.get_text_channel('twisty-test.dev_admin');
+	var Zeal_dm = Discord.bot.get_text_channel('RS JUSTICE.global-usage');
+	// var Zeal_dm = Discord.bot.get_text_channel('twisty-test.dev_admin');
 	if (Array.isArray(response))
 	{
 		for(var i = 0; i < response.length; i++)

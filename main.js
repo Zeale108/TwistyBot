@@ -91,8 +91,8 @@ Discord.bot.on('message', function(message) {
 					{ // TwistyBot probably doesn't have permission to talk here, send it to user's PM
 						if (idx == 0)
 						{
-							var explanation = 'Hi, TwistyBot was unable to respond to your command in ' + message.channel.get_name() + '.\n'
-							+ 'If you want TwistyBot to respond in that channel, please ensure that it has permissions to send messages and embed links.'
+							var explanation = 'Hi, I was unable to respond to your command in ' + message.channel.get_name() + '.\n'
+							+ 'If you want me to respond in that channel, please ensure that I have permissions to send messages and embed links.'
 							+ '\n' + message.cleanContent + '\n';
 						}
 
