@@ -36,17 +36,14 @@ Discord.bot.on('message', function(message) {
 
 	log_message('New', message);
 
-	var prefix = message.get_command_prefix();
+	var prefix = '!';
 	var content = message.cleanContent;
 
 	if (!content.startsWith(prefix))
 		return; // Not a command
 
-	// It is a mobile command if the prefix is duplicated
-	var is_mobile_command = content.startsWith(prefix, prefix.length);
-
 	// Remove prefix from content
-	content = content.slice(is_mobile_command ? 2 * prefix.length : prefix.length);
+	content = content.slice(prefix.length);
 
 	// Try to extract the command name
 	var match = content.match(/^([a-zA-Z_]+)\s*,?/);
@@ -59,8 +56,6 @@ Discord.bot.on('message', function(message) {
 
 	var params = content.slice(match[0].length).trim();	// Extract params without command name
 	params = params == '' ? [] : params.split(',').map(e => e.trim());	// Split comma separated parameters
-
-
 
 	if (!message.check_permissions(config.get('global_permissions').concat(command.permissions)))
 	{
@@ -114,7 +109,7 @@ Discord.bot.on('message', function(message) {
 		console.warn(err.stack);
 		message.channel.sendMessage(Discord.code_block('An error occurred while running the command:\n' + err.message));
 
-		Discord.bot.get_text_channel('Twisty-Test.logs').sendMessage(Discord.code_block(
+		Discord.bot.get_text_channel('RS JUSTICE.bot-errors').sendMessage(Discord.code_block(
 			'Channel: ' + message.channel.get_name()
 		 	+ '\nAuthor:  ' + message.author.username + '#' + message.author.discriminator
 		 	+ '\nMessage: ' + message.cleanContent
@@ -128,7 +123,7 @@ process.on('unhandledRejection', function(err) {
 	console.error('Promise Rejected!!!');
 	console.warn(err.stack);
 
-	Discord.bot.get_text_channel('Twisty-Test.logs').sendMessage(Discord.code_block('Unhandled promise!\n' + err.stack));
+	Discord.bot.get_text_channel('RS JUSTICE.bot-errors').sendMessage(Discord.code_block('Unhandled promise!\n' + err.stack));
 	//throw err;
 });
 

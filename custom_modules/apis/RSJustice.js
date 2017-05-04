@@ -1,4 +1,3 @@
-/*
 
 const Wordpress_Cache = custom_require('Wordpress_Cache');
 var rsj_cache = new Wordpress_Cache(config.get('rsj_endpoint'), config.get('rsj_password'));
@@ -34,8 +33,8 @@ class live_feed {
 	}
 }
 
-var public_feed = new live_feed(config.get('live') ? 'RS JUSTICE.public-chat' : 'Twisty-Test.feed');
-var private_feed = new live_feed(config.get('live') ? 'RS JUSTICE.live-feed' : 'Twisty-Test.feed');
+var public_feed = new live_feed('RS JUSTICE.public-chat');
+var private_feed = new live_feed('RS JUSTICE.live-feed');
 
 // Public cases
 rsj_cache.on('new_publish', function(new_post) {
@@ -79,5 +78,3 @@ rsj_cache.on('new_pending', function(new_post) {
 
 
 module.exports = rsj_cache;
-
-*/
