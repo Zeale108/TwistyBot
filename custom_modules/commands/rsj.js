@@ -30,9 +30,15 @@ module.exports.command = async function(message, params) {
 	// Which posts do we care about?
 	var post_types = ['publish'];
 	if (message.check_permissions([
-			{ channel: ['266095695860203520', '230201497302859776'] }, // RS JUSTICE.name-checks, RS JUSTICE.private
-			// { guild: '232274245848137728' }, // Twisty-Test
-			{ user: ['217934790886686730', '189803024611278849'] }, // Zeal, Twisty Fork
+			{ channel: ['309255385750175747', '230201497302859776'] }, // RS JUSTICE.name-checks, RS JUSTICE.private
+		        { channel: ['306975831324884992'] }, 
+		
+		        // Clan guild channels:
+			// Nomad's Redemption: ...4992
+			// 
+		
+			{ guild: ['230095268354326528'] }, // Twisty-Test
+			{ user: ['217934790886686730', '189803024611278849', '99213910405578752'] }, // Zeal, Twisty Fork, Alpha Dragon
 		]))
 	{
 		post_types.push('private');
