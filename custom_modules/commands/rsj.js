@@ -32,13 +32,15 @@ module.exports.command = async function(message, params) {
 	if (message.check_permissions([
 			{ channel: ['309255385750175747', '230201497302859776', '301246003703447553', '289640885421998081'] }, 
 			// RS JUSTICE.name-checks, RS JUSTICE.private, RS JUSTICE.moderation, RS JUSTICE.command-testing
+			
 		        { channel: ['306975831324884992'] }, 
 		
 		        // Clan guild channels:
 			// Nomad's Redemption: ...4992
 			// 
 		
-			{ guild: ['230095268354326528'] }, // Twisty-Test
+			{ guild: ['230095268354326528'] }, // RS JUSTICE
+			
 			{ user: ['217934790886686730', '189803024611278849', '99213910405578752'] }, // Zeal, Twisty Fork, Alpha Dragon
 		]))
 	{
