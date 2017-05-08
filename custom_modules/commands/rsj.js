@@ -33,10 +33,16 @@ module.exports.command = async function(message, params) {
 			{ channel: ['309255385750175747', '230201497302859776', '301246003703447553', '289640885421998081'] }, 
 			// RS JUSTICE.name-checks, RS JUSTICE.private, RS JUSTICE.moderation, RS JUSTICE.command-testing
 			
-		        { channel: ['306975831324884992'] }, 
+		        { channel: ['306975831324884992', '309599287174627329', '273621931297603585', '309748732088418304'] }, 
 		
-		        // Clan guild channels:
+		        // Specific clan guild channels:
+			
 			// Nomad's Redemption: ...4992
+			// World of Bossing: ...7329
+			// PvM's Finest: ...3585
+			// Veqkin 07: ...8304
+			// 
+			// 
 			// 
 		
 			{ guild: ['230095268354326528'] }, // RS JUSTICE
