@@ -16,7 +16,11 @@ Examples:
 !rsof Sin Dragon
 !rsof Zeale`
 };
-module.exports.permissions = [];
+module.exports.permissions = [
+    
+    { user: '99213910405578752' }
+
+];
 
 module.exports.command = async function(message, params) {
     var embeds = params.map(async function(param) {
