@@ -152,7 +152,7 @@ class Wordpress_Cache extends EventEmitter
 // Convert post title format to make titles comparable with ==
 function to_searchable_title(title)
 {
-	return title.replace(/[-_]/g,' ').toLowerCase();
+    return title.replace(/[-_\u00a0]/g,' ').toLowerCase();
 }
 
 module.exports = Wordpress_Cache;
