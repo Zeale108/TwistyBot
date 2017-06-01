@@ -45,7 +45,6 @@ module.exports.command = async function(message, params) {
 			// 
 			// 
 		
-			{ guild: ['230095268354326528'] }, // RS JUSTICE
 			
 			{ user: ['217934790886686730', '189803024611278849', '99213910405578752'] }, // Zeal, Twisty Fork, Alpha Dragon
 		]))
